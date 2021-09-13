@@ -29,11 +29,13 @@ You can see the result on the [demo site](https://tododemo-7c2c9.web.app).
 > See the official documents for detail information: _[Add Firebase to your JavaScript project](https://firebase.google.com/docs/web/setup)_
 
 5. To save data, we need to enable the Firestore Database.
+
    ![](./screenshots/02.png)
 
    Choose the **production mode** and select a location for the Firestore, any of them are fine.
 
 6. After the database finishes setting up, create a _collection_ and add at least one entry.
+
    ![](./screenshots/03.png)
 
 7. Now we need to set up access rules for our database, go to **Rules** and set up rules following official documents. Noticed that, Firestore does not allow write access with wildcard in production mode for safety reasons. For the demo app, we have to allow all read and write access on the `todo-list` collection.
