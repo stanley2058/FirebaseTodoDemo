@@ -1,6 +1,7 @@
 # Firebase Todo Demo
 
 This demo is using only vanilla JavaScript with ES6 syntax and Firebase SDK.
+
 You can see the result on the [demo site](https://tododemo-7c2c9.web.app).
 
 ## Development
