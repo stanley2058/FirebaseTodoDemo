@@ -7,7 +7,9 @@ You can see the result on the [demo site](https://tododemo-7c2c9.web.app).
 
 1. Create a Firebase application, go to [Firebase](https://console.firebase.google.com/) and follow the instructions.
 2. Wait for the project to finalize, click on your target application type, _Web_ for this demo. (You can also find the settings by clicking on the gear icon on top of the left sidebar.)
+
    ![](./screenshots/01.png)
+
 3. Register the application and retain the project credentials. You should get something like this:
 
    ```javascript
