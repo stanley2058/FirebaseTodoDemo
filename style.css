@@ -1,0 +1,20 @@
+main {
+  position: relative;
+  top: 8em;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+}
+
+.submit {
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+}
+
+li.list-group-item {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  justify-content: space-between;
+}
