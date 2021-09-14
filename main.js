@@ -10,6 +10,7 @@ import {
   onSnapshot,
   QuerySnapshot,
   setDoc,
+  Timestamp,
 } from "firebase/firestore";
 import { FirebaseConfig } from "./config";
 
@@ -90,6 +91,7 @@ const addTodo = (event) => {
   saveToFirebase({
     context: val,
     checked: false,
+    timestamp: Timestamp.now(),
   });
 };
 
@@ -112,13 +114,15 @@ const onDelete = (event) => {
 const mapFirebaseDataToTodoList = (snapshot) => {
   todoList = [];
   snapshot.forEach((todo) => {
-    const { context, checked } = todo.data();
+    const { context, checked, timestamp } = todo.data();
     todoList.push({
       id: todo.id,
       context,
       checked,
+      timestamp,
     });
   });
+  todoList.sort((a, b) => b.timestamp.toMillis() - a.timestamp.toMillis());
   renderTodo();
 };
 
@@ -132,15 +136,15 @@ const getFromFirebase = async () => {
 
 /**
  * Save data to Firestore, create if new, update if exist.
- * @param {{context: string, checked: boolean}} todo todo object for Firestore
+ * @param {{context: string, checked: boolean, timestamp: Timestamp}} todo todo object for Firestore
  * @param {string | null} id id of document
  */
-const saveToFirebase = async (todo, id = null) => {
-  const { context, checked } = todo;
+const saveToFirebase = async ({ context, checked, timestamp }, id = null) => {
+  const data = { context, checked, timestamp };
   if (id) {
-    await setDoc(doc(db, "todo-list", id), { context, checked });
+    await setDoc(doc(db, "todo-list", id), data);
   } else {
-    await addDoc(collection(db, "todo-list"), { context, checked });
+    await addDoc(collection(db, "todo-list"), data);
   }
 };
 
