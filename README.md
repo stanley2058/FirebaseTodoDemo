@@ -4,6 +4,8 @@ This demo is using only vanilla JavaScript with ES6 syntax and Firebase SDK.
 
 You can checkout the result on the [demo site](https://tododemo-7c2c9.web.app).
 
+Full breakdown of `main.js` is [here](./Breakdown.md).
+
 ## Development
 
 1. Make sure you have Node.js installed and clone this repo.
