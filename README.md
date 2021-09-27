@@ -6,6 +6,20 @@ You can checkout the result on the [demo site](https://tododemo-7c2c9.web.app).
 
 Full breakdown of `main.js` is [here](./Breakdown.md).
 
+## Functional Requirements
+
+1. Can create a new todo item.
+2. Can cross out a todo item.
+3. Can delete a todo item.
+4. The list of todo items need to be persistent.
+5. Realtime synchronization across all instances of the application.
+
+## Architecture
+
+The architecture diagram is as following, check out the program constructed following this diagram [here](./Breakdown.md).
+
+![](architecture.png)
+
 ## Development
 
 1. Make sure you have Node.js installed and clone this repo.
